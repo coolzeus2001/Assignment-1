@@ -1,0 +1,90 @@
+{
+    "tables": [
+        {
+            "table_name": "users",
+            "description": "Stores information about users in the system.",
+            "columns": {
+                "user_id": "Unique identifier for each user.",
+                "name": "Full name of the user.",
+                "email": "Email address of the user.",
+                "role": "Role of the user in the system (e.g., admin, agent).",
+                "created_at": "Timestamp when the user account was created."
+            }
+        },
+        {
+            "table_name": "incidents",
+            "description": "Tracks incidents reported by users.",
+            "columns": {
+                "incident_id": "Unique identifier for each incident.",
+                "user_id": "ID of the user who reported the incident.",
+                "priority": "Priority level of the incident (e.g., low, medium, high).",
+                "status": "Current status of the incident (e.g., open, resolved).",
+                "created_at": "Timestamp when the incident was created.",
+                "resolved_at": "Timestamp when the incident was resolved."
+            }
+        },
+        {
+            "table_name": "assets",
+            "description": "Records IT assets assigned to users.",
+            "columns": {
+                "asset_id": "Unique identifier for each asset.",
+                "asset_type": "Type of asset (e.g., laptop, monitor).",
+                "assigned_to": "User ID the asset is assigned to.",
+                "purchase_date": "Date the asset was purchased.",
+                "warranty_expiry": "Warranty expiration date."
+            }
+        },
+        {
+            "table_name": "departments",
+            "description": "Contains information about company departments.",
+            "columns": {
+                "department_id": "Unique identifier for the department.",
+                "name": "Name of the department.",
+                "manager_id": "User ID of the department manager."
+            }
+        },
+        {
+            "table_name": "tickets",
+            "description": "Support tickets raised by users.",
+            "columns": {
+                "ticket_id": "Unique identifier for each ticket.",
+                "user_id": "ID of the user who raised the ticket.",
+                "subject": "Brief description of the issue.",
+                "status": "Current status of the ticket.",
+                "assigned_to": "Support agent handling the ticket."
+            }
+        },
+        {
+            "table_name": "knowledge_base",
+            "description": "Articles and documentation available to users.",
+            "columns": {
+                "article_id": "Unique identifier for each article.",
+                "title": "Title of the article.",
+                "content": "Main content of the article.",
+                "created_by": "User ID of the article creator.",
+                "created_at": "Timestamp when the article was created."
+            }
+        },
+        {
+            "table_name": "change_requests",
+            "description": "Tracks change requests within the IT infrastructure.",
+            "columns": {
+                "request_id": "Unique identifier for the change request.",
+                "requested_by": "User ID who requested the change.",
+                "description": "Details about the requested change.",
+                "status": "Status of the change request.",
+                "approval_status": "Approval status (e.g., pending, approved, rejected)."
+            }
+        },
+        {
+            "table_name": "logs",
+            "description": "System logs capturing various activities.",
+            "columns": {
+                "log_id": "Unique identifier for each log entry.",
+                "user_id": "User involved in the logged activity.",
+                "action": "Action performed by the user.",
+                "timestamp": "Time the action occurred."
+            }
+        }
+    ]
+}
