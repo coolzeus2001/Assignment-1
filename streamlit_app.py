@@ -148,10 +148,10 @@ class Text2SQLSystem:
     def generate_sql_with_gemini(self, processed_data):
         """Use Gemini API to generate SQL from natural language"""
         try:
-            # Configure Gemini API - try both keys
-            api_key = os.getenv('GEMINI_API_KEY') or os.getenv('GEMINI_API_KEY_2') or "AIzaSyDOua5rct6bbDP-shJCeRV0k_Nw_cvxghg"
+            # Configure Gemini API - use environment variables only
+            api_key = os.getenv('GEMINI_API_KEY') or os.getenv('GEMINI_API_KEY_2')
             if not api_key:
-                return None, "Gemini API key not found."
+                return None, "Gemini API key not found. Please set GEMINI_API_KEY or GEMINI_API_KEY_2 environment variable."
             
             genai.configure(api_key=api_key)
             model = GenerativeModel('gemini-1.5-flash')
